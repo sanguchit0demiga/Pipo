@@ -2000,7 +2000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1253590380}
   m_Layer: 0
-  m_Name: Pipo
+  m_Name: Pet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2125,7 +2125,7 @@ GameObject:
   - component: {fileID: 1449803017}
   - component: {fileID: 1449803018}
   m_Layer: 0
-  m_Name: Basic Charakter Spritesheet_0
+  m_Name: Pipo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2141,7 +2141,7 @@ Animator:
   m_GameObject: {fileID: 1449803011}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b10b320d98fe2af4b8bdae9a33aa57b8, type: 2}
+  m_Controller: {fileID: 9100000, guid: f58c3eaf32d63a640985a21dfc8b0869, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2864,7 +2864,7 @@ Transform:
   m_GameObject: {fileID: 1748981047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0644, y: -4.13, z: 0}
+  m_LocalPosition: {x: 0.0644, y: -4.56, z: 0}
   m_LocalScale: {x: 18.042507, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 public class StatsPlayer : MonoBehaviour
 {
     //stats
-    [Range(0,100)] public float hambre = 100f;
+    [Range(0, 100)] public float hambre = 100f;
     [Range(0, 100)] public float energia = 100f;
     [Range(0, 100)] public float felicidad = 100f;
     [Range(0, 100)] public float limpieza = 100f;
@@ -15,6 +15,11 @@ public class StatsPlayer : MonoBehaviour
     public Image barraFelicidad;
     public Image barraLimpieza;
     public Image barraSalud;
+
+    public Image happy;
+    public Image normal;
+    public Image sad;
+    public Image sick;
 
     void Update()
     {
@@ -34,12 +39,13 @@ public class StatsPlayer : MonoBehaviour
         barraFelicidad.fillAmount = felicidad / 100f;
         barraLimpieza.fillAmount = limpieza / 100f;
         barraSalud.fillAmount = salud / 100f;
+        EmotionState();
     }
 
-        public void Comer(float cantidad)
-        {
-            hambre = Mathf.Clamp(hambre + cantidad, 0, 100);
-        }
+    public void Comer(float cantidad)
+    {
+        hambre = Mathf.Clamp(hambre + cantidad, 0, 100);
+    }
     public void Dormir(float cantidad)
     {
         energia = Mathf.Clamp(energia + cantidad, 0, 100);
@@ -52,5 +58,27 @@ public class StatsPlayer : MonoBehaviour
     {
         limpieza = Mathf.Clamp(limpieza + cantidad, 0, 100);
     }
+
+    public void EmotionState()
+    {
+
+        {
+            happy.gameObject.SetActive(false);
+            normal.gameObject.SetActive(false);
+            sad.gameObject.SetActive(false);
+            sick.gameObject.SetActive(false);
+
+            if (limpieza < 10f)
+                sick.gameObject.SetActive(true);
+            else if (felicidad <= 30f)
+                sad.gameObject.SetActive(true);
+            else if (felicidad > 70f)
+                happy.gameObject.SetActive(true);
+            else
+                normal.gameObject.SetActive(true);
+        }
+    }
 }
+    
+
 

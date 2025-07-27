@@ -934,6 +934,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+
     nameFileIdTable:
       Basic Charakter Actions_0: 8607240835638418105
       Basic Charakter Actions_1: 4825233689777840938
@@ -968,6 +969,7 @@ TextureImporter:
       Basic Charakter Actions_7: -9151337159511855371
       Basic Charakter Actions_8: -6131446131858353364
       Basic Charakter Actions_9: 6495871422736360654
+
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

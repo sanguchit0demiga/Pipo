@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5ea2d9b4812a03844a6ac83730582323
+guid: e0468a744deb01a4dba1f8bc99ee1bc6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6085524761092439429
-    second: dialog box_0
+      213: 7059880902236076680
+    second: Catpaw holding Mouse icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialog box_0
+      name: Catpaw holding Mouse icon_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 8
-        width: 32
-        height: 30
+        x: 1
+        y: 1
+        width: 15
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58d32c81780247450800000000000000
-      internalID: 6085524761092439429
+      spriteID: 88a7856964cb9f160800000000000000
+      internalID: 7059880902236076680
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialog box_0: 6085524761092439429
+      Catpaw holding Mouse icon_0: 7059880902236076680
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

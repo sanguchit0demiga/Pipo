@@ -1009,7 +1009,6 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-
     nameFileIdTable:
       Tools_0: 2860006914309871096
       Tools_1: -2376758258213490438
@@ -1047,7 +1046,6 @@ TextureImporter:
       Tools_7: 4858919519181452133
       Tools_8: -2318285518543234687
       Tools_9: 6451205499376113164
-
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

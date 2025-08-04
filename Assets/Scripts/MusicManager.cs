@@ -5,6 +5,7 @@ public class MusicManager : MonoBehaviour
     private static MusicManager Instance;
     private AudioSource audioSource;
     public AudioClip bgm;
+    public bool notMenu;
 
     private void Awake()
     {
@@ -12,6 +13,10 @@ public class MusicManager : MonoBehaviour
         {
             Instance=this;
             audioSource = GetComponent<AudioSource>();
+            if (notMenu)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
         }
         else
         {

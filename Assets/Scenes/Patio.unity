@@ -373,6 +373,10 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8850677309918506893, guid: 3dfa7053a7c9d164681841533ac17334, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7163090357499055083, guid: 3dfa7053a7c9d164681841533ac17334, type: 3}
     m_RemovedGameObjects: []
@@ -6346,7 +6350,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 988239074}
   - {fileID: 1924342120}
-  tiempoEntreSpawns: 5
+  tiempoEntreSpawns: 25
 --- !u!4 &1488739359
 Transform:
   m_ObjectHideFlags: 0

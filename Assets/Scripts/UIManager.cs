@@ -40,6 +40,11 @@ public class UIManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (scene.name == "MainMenu")
+        {
+            Destroy(gameObject);
+            return;
+        }
         barraHambre = GameObject.Find("hambre")?.GetComponent<Image>();
         barraEnergia = GameObject.Find("energia")?.GetComponent<Image>();
         barraFelicidad = GameObject.Find("felicidad")?.GetComponent<Image>();

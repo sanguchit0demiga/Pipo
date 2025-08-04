@@ -8,6 +8,8 @@ public abstract class Fruit : MonoBehaviour, ICollectible
     private bool arrastrando = false;
 
     public static event Action<float> OnFruitCollected;
+    private float tiempoVida = 10f;
+
 
     public virtual void Collect()
     {
@@ -21,6 +23,11 @@ public abstract class Fruit : MonoBehaviour, ICollectible
         {
             Vector2 posMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = posMouse;
+        }
+        tiempoVida -= Time.deltaTime;
+        if (tiempoVida <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

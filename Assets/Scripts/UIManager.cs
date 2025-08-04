@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     public Image normal;
     public Image sad;
     public Image sick;
+    public Slider barraExp;
+    public Text nivelText;
 
     void Awake()
     {
@@ -43,7 +45,8 @@ public class UIManager : MonoBehaviour
         barraEnergia = GameObject.Find("energia")?.GetComponent<Image>();
         barraFelicidad = GameObject.Find("felicidad")?.GetComponent<Image>();
         barraLimpieza = GameObject.Find("limpieza")?.GetComponent<Image>();
-       
+        barraExp = GameObject.Find("barraExp")?.GetComponent<Slider>();
+        nivelText = GameObject.Find("NivelText")?.GetComponent<Text>();
 
         // Buscar emociones dentro del objeto Emotions
         var emotionsParent = GameObject.Find("Emotions");
@@ -53,6 +56,7 @@ public class UIManager : MonoBehaviour
             normal = emotionsParent.transform.Find("Normal")?.GetComponent<Image>();
             sad = emotionsParent.transform.Find("Sad")?.GetComponent<Image>();
             sick = emotionsParent.transform.Find("Sick")?.GetComponent<Image>();
+         
         }
     }
 }

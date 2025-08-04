@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
-    public float cantidadHambre = 25f; 
+    public float cantidadHambre = 10f; 
     private bool arrastrando = false;
 
     void Update()

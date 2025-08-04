@@ -11,6 +11,8 @@ public class StatsPlayer : MonoBehaviour
     [Range(0, 100)] public float limpieza = 100f;
     [Range(0, 100)] public float salud = 100f;
 
+    private bool estaEnCama = false;
+
     void Awake()
     {
         if (instance == null)
@@ -58,11 +60,22 @@ public class StatsPlayer : MonoBehaviour
     void Update()
     {
         hambre = Mathf.Max(hambre - Time.deltaTime, 0);
-        energia = Mathf.Max(energia - Time.deltaTime * 0.3f, 0);
         limpieza = Mathf.Max(limpieza - Time.deltaTime * 0.1f, 0);
 
         float factor = limpieza < 10 ? 2f : 1f;
         felicidad = Mathf.Max(felicidad - Time.deltaTime * factor, 0);
+
+        if (estaEnCama && !LampController.lampIsOn)
+           
+        {
+
+            energia = Mathf.Min(energia + Time.deltaTime * 5f, 100f);
+            Debug.Log("Recuperando energía: en cama y luz apagada.");
+        }
+        else
+        {
+            energia = Mathf.Max(energia - Time.deltaTime * 0.3f, 0); 
+        }
 
         RefreshUI();
     }
@@ -116,4 +129,39 @@ public class StatsPlayer : MonoBehaviour
         else
             UIManager.instance.normal.gameObject.SetActive(true);
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "TriggerDePrueba")
+        {
+            Debug.Log("Trigger de prueba DETECTADO. La colisión funciona.");
+        }
+        if (other.CompareTag("Bed"))
+        {
+            estaEnCama = true;
+            Debug.Log("Pipo entró en la cama.");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Bed"))
+        {
+            estaEnCama = false;
+            Debug.Log("Pipo salió de la cama.");
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("COLISIÓN DETECTADA con " + collision.gameObject.name);
+    }
+    public void OnBedEntered()
+    {
+        estaEnCama = true;
+    }
+
+    public void OnBedExited()
+    {
+        estaEnCama = false;
+    }
+
 }

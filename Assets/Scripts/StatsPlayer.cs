@@ -12,7 +12,8 @@ public class StatsPlayer : MonoBehaviour
     [Range(0, 100)] public float salud = 100f;
 
     private bool estaEnCama = false;
-
+    private bool estaEnBañera = false;
+    public bool EstaEnBañera => estaEnBañera;
     void Awake()
     {
         if (instance == null)
@@ -140,6 +141,11 @@ public class StatsPlayer : MonoBehaviour
             estaEnCama = true;
             Debug.Log("Pipo entró en la cama.");
         }
+        if (other.CompareTag("Bathtub"))
+        {
+            estaEnBañera = true;
+            Debug.Log("Pipo entró en la bañera.");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -148,6 +154,11 @@ public class StatsPlayer : MonoBehaviour
         {
             estaEnCama = false;
             Debug.Log("Pipo salió de la cama.");
+        }
+        if (other.CompareTag("Bathtub"))
+        {
+            estaEnBañera = false;
+            Debug.Log("Pipo salió de la bañera.");
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
@@ -163,5 +174,13 @@ public class StatsPlayer : MonoBehaviour
     {
         estaEnCama = false;
     }
+    public void OnBañeraEntered()
+    {
+        estaEnBañera = true;
+    }
 
+    public void OnBañeraExited()
+    {
+        estaEnBañera = false;
+    }
 }

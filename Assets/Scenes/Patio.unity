@@ -5168,6 +5168,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1341061930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3527357566193647244, guid: f44a03faa86d51a49b9811d98dc2a1c7, type: 3}
+  m_PrefabInstance: {fileID: 7689709661833261274}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1347618218 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3407228175077602075, guid: f44a03faa86d51a49b9811d98dc2a1c7, type: 3}
@@ -6141,7 +6152,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 988239074}
   - {fileID: 1924342120}
-  tiempoEntreSpawns: 25
+  tiempoEntreSpawns: 10
 --- !u!4 &1488739359
 Transform:
   m_ObjectHideFlags: 0
@@ -6200,8 +6211,7 @@ MonoBehaviour:
   barraHambre: {fileID: 1347618218}
   barraEnergia: {fileID: 579233572}
   barraFelicidad: {fileID: 1288475797}
-  barraLimpieza: {fileID: 570761944}
-  barraSalud: {fileID: 0}
+  barraLimpieza: {fileID: 1341061930}
   happy: {fileID: 1631280303}
   normal: {fileID: 1534027085}
   sad: {fileID: 620417672}
@@ -7409,7 +7419,6 @@ MonoBehaviour:
   energia: 100
   felicidad: 100
   limpieza: 100
-  salud: 100
 --- !u!1 &2130774875
 GameObject:
   m_ObjectHideFlags: 0
@@ -9324,6 +9333,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3407228175077602075, guid: f44a03faa86d51a49b9811d98dc2a1c7, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5549507410441815641, guid: f44a03faa86d51a49b9811d98dc2a1c7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
@@ -9339,6 +9352,10 @@ PrefabInstance:
     - target: {fileID: 7374407393217593354, guid: f44a03faa86d51a49b9811d98dc2a1c7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -30.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904765975367399332, guid: f44a03faa86d51a49b9811d98dc2a1c7, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

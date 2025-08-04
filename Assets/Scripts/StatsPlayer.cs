@@ -9,7 +9,7 @@ public class StatsPlayer : MonoBehaviour
     [Range(0, 100)] public float energia = 100f;
     [Range(0, 100)] public float felicidad = 100f;
     [Range(0, 100)] public float limpieza = 100f;
-    [Range(0, 100)] public float salud = 100f;
+   
 
     private bool estaEnCama = false;
     private bool estaEnBañera = false;
@@ -47,8 +47,8 @@ public class StatsPlayer : MonoBehaviour
             UIManager.instance.barraHambre == null ||
             UIManager.instance.barraEnergia == null ||
             UIManager.instance.barraFelicidad == null ||
-            UIManager.instance.barraLimpieza == null ||
-            UIManager.instance.barraSalud == null
+            UIManager.instance.barraLimpieza == null
+           
         ))
         {
             timeout -= Time.deltaTime;
@@ -88,15 +88,15 @@ public class StatsPlayer : MonoBehaviour
             UIManager.instance.barraHambre == null ||
             UIManager.instance.barraEnergia == null ||
             UIManager.instance.barraFelicidad == null ||
-            UIManager.instance.barraLimpieza == null ||
-            UIManager.instance.barraSalud == null
+            UIManager.instance.barraLimpieza == null 
+          
         ) return;
 
         UIManager.instance.barraHambre.fillAmount = hambre / 100f;
         UIManager.instance.barraEnergia.fillAmount = energia / 100f;
         UIManager.instance.barraFelicidad.fillAmount = felicidad / 100f;
         UIManager.instance.barraLimpieza.fillAmount = limpieza / 100f;
-        UIManager.instance.barraSalud.fillAmount = salud / 100f;
+      
 
         EmotionState();
     }

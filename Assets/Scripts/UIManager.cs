@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public Image barraEnergia;
     public Image barraFelicidad;
     public Image barraLimpieza;
-    public Image barraSalud;
+   
 
     public Image happy;
     public Image normal;
@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
         barraEnergia = GameObject.Find("energia")?.GetComponent<Image>();
         barraFelicidad = GameObject.Find("felicidad")?.GetComponent<Image>();
         barraLimpieza = GameObject.Find("limpieza")?.GetComponent<Image>();
-        barraSalud = GameObject.Find("salud")?.GetComponent<Image>();
+       
 
         // Buscar emociones dentro del objeto Emotions
         var emotionsParent = GameObject.Find("Emotions");

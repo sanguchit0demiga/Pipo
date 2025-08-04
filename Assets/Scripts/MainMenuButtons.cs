@@ -10,23 +10,23 @@ public class MainMenuButtons : MonoBehaviour
     {
        Cursor.visible = true;
     }
-    void Play()
+    public void Play()
     {
         SceneManager.LoadScene("Patio");
     }
 
-    void Story()
+    public void Story()
     {
         ReadStory();
     }
 
-    void ReadStory()
+    public void ReadStory()
     {
         storyOpen = true;
         story.SetActive(true);
     }
 
-    void CloseStory()
+    public void CloseStory()
     {
         story.SetActive(false);
         storyOpen=false;

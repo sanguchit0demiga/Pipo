@@ -40,7 +40,6 @@ public class UIManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Reasignar referencias de las barras
         barraHambre = GameObject.Find("hambre")?.GetComponent<Image>();
         barraEnergia = GameObject.Find("energia")?.GetComponent<Image>();
         barraFelicidad = GameObject.Find("felicidad")?.GetComponent<Image>();
@@ -48,7 +47,6 @@ public class UIManager : MonoBehaviour
         barraExp = GameObject.Find("barraExp")?.GetComponent<Slider>();
         nivelText = GameObject.Find("NivelText")?.GetComponent<Text>();
 
-        // Buscar emociones dentro del objeto Emotions
         var emotionsParent = GameObject.Find("Emotions");
         if (emotionsParent != null)
         {

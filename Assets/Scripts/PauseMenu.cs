@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void QuitGame()
@@ -57,9 +57,9 @@ public class PauseMenu : MonoBehaviour
         ResumeGame();
     }
 
-    StatsPlayer statsPlayer = new StatsPlayer();
+    
     public void SavePlayer()
     {
-        SaveSystem.SavePlayer(statsPlayer);
+        SaveSystem.SavePlayer(StatsPlayer.instance);
     }
 }

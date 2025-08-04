@@ -1,32 +1,47 @@
 using UnityEngine;
+using System.Collections.Generic;  
 
 public class ArbolSpawner : MonoBehaviour
 {
-    public GameObject manzanaPrefab; 
-    public Transform[] spawnPoints; 
+   
+    public List<GameObject> prefabsFruta;
 
-    public float tiempoEntreSpawns = 30f;
-    private float tiempoRestante;
+    public Transform[] spawnPoints;
+    public float tiempoSpawneo = 30f;
+    private float tiempoSpawneoActual;
 
-    private void Start()
+    void Start()
     {
-        tiempoRestante = tiempoEntreSpawns;
+        tiempoSpawneoActual = tiempoSpawneo;
     }
 
-    private void Update()
+    void Update()
     {
-        tiempoRestante -= Time.deltaTime;
-
-        if (tiempoRestante <= 0f)
+        if (tiempoSpawneoActual <= 0)
         {
-            SpawnearManzana();
-            tiempoRestante = tiempoEntreSpawns;
+            Spawn();
+            tiempoSpawneoActual = tiempoSpawneo;
+        }
+        else
+        {
+            tiempoSpawneoActual -= Time.deltaTime;
         }
     }
 
-    void SpawnearManzana()
+    void Spawn()
     {
-        int indice = Random.Range(0, spawnPoints.Length);
-        Instantiate(manzanaPrefab, spawnPoints[indice].position, Quaternion.identity);
+        if (prefabsFruta == null || prefabsFruta.Count == 0 || spawnPoints == null || spawnPoints.Length == 0)
+        {
+            Debug.LogWarning("No hay prefabs de fruta o puntos de spawn asignados.");
+            return;
+        }
+
+        int indicePrefab = UnityEngine.Random.Range(0, prefabsFruta.Count);
+        GameObject prefabSeleccionado = prefabsFruta[indicePrefab];
+
+        int indiceSpawnPoint = UnityEngine.Random.Range(0, spawnPoints.Length);
+        Transform spawnPoint = spawnPoints[indiceSpawnPoint];
+
+        GameObject nuevaFruta = Instantiate(prefabSeleccionado, spawnPoint.position, spawnPoint.rotation);
     }
 }

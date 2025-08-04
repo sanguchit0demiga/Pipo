@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System; 
+using System.Collections.Generic; 
 
 public class StatsPlayer : MonoBehaviour
 {
@@ -10,13 +12,23 @@ public class StatsPlayer : MonoBehaviour
     [Range(0, 100)] public float felicidad = 100f;
     [Range(0, 100)] public float limpieza = 100f;
 
-
     private bool estaEnCama = false;
     private bool estaEnBañera = false;
     public bool EstaEnBañera => estaEnBañera;
     private float exp = 0f;
     private int nivel = 1;
     private float tiempoExp = 0f;
+
+    private static event Action OnBedEnteredEvent;
+    private static event Action OnBedExitedEvent;
+    private static event Action OnBañeraEnteredEvent;
+    private static event Action OnBañeraExitedEvent;
+
+    public static void InvokeOnBedEnteredEvent() => OnBedEnteredEvent?.Invoke();
+    public static void InvokeOnBedExitedEvent() => OnBedExitedEvent?.Invoke();
+    public static void InvokeOnBañeraEnteredEvent() => OnBañeraEnteredEvent?.Invoke();
+    public static void InvokeOnBañeraExitedEvent() => OnBañeraExitedEvent?.Invoke();
+
     void Awake()
     {
         if (instance == null)
@@ -30,11 +42,23 @@ public class StatsPlayer : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        Fruit.OnFruitCollected += HandleFruitCollected;
+        OnBedEnteredEvent += () => { estaEnCama = true; Debug.Log("Pipo entró en la cama."); };
+        OnBedExitedEvent += () => { estaEnCama = false; Debug.Log("Pipo salió de la cama."); };
+        OnBañeraEnteredEvent += () => { estaEnBañera = true; Debug.Log("Pipo entró en la bañera."); };
+        OnBañeraExitedEvent += () => { estaEnBañera = false; Debug.Log("Pipo salió de la bañera."); };
     }
 
     void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        Fruit.OnFruitCollected -= HandleFruitCollected;
+        OnBedEnteredEvent -= () => { estaEnCama = true; Debug.Log("Pipo entró en la cama."); };
+        OnBedExitedEvent -= () => { estaEnCama = false; Debug.Log("Pipo salió de la cama."); };
+        OnBañeraEnteredEvent -= () => { estaEnBañera = true; Debug.Log("Pipo entró en la bañera."); };
+        OnBañeraExitedEvent -= () => { estaEnBañera = false; Debug.Log("Pipo salió de la bañera."); };
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -53,7 +77,6 @@ public class StatsPlayer : MonoBehaviour
             UIManager.instance.barraLimpieza == null ||
             UIManager.instance.barraExp == null ||
             UIManager.instance.nivelText == null
-
         ))
         {
             timeout -= Time.deltaTime;
@@ -65,18 +88,15 @@ public class StatsPlayer : MonoBehaviour
 
     void Update()
     {
-        hambre = Mathf.Max(hambre - Time.deltaTime *  0.5f, 0);
+        hambre = Mathf.Max(hambre - Time.deltaTime * 0.5f, 0);
         limpieza = Mathf.Max(limpieza - Time.deltaTime * 0.6f, 0);
 
         float factor = limpieza < 10 ? 2f : 1f;
         felicidad = Mathf.Max(felicidad - Time.deltaTime * 0.4f, 0);
 
         if (estaEnCama && !LampController.lampIsOn)
-
         {
-
             energia = Mathf.Min(energia + Time.deltaTime * 0.5f, 100f);
-
         }
         else
         {
@@ -94,14 +114,12 @@ public class StatsPlayer : MonoBehaviour
             UIManager.instance.barraEnergia == null ||
             UIManager.instance.barraFelicidad == null ||
             UIManager.instance.barraLimpieza == null
-
         ) return;
 
         UIManager.instance.barraHambre.fillAmount = hambre / 100f;
         UIManager.instance.barraEnergia.fillAmount = energia / 100f;
         UIManager.instance.barraFelicidad.fillAmount = felicidad / 100f;
         UIManager.instance.barraLimpieza.fillAmount = limpieza / 100f;
-
 
         EmotionState();
 
@@ -110,7 +128,6 @@ public class StatsPlayer : MonoBehaviour
 
         if (UIManager.instance.nivelText != null)
             UIManager.instance.nivelText.text = nivel.ToString();
-
     }
 
     public void Comer(float cantidad) => hambre = Mathf.Clamp(hambre + cantidad, 0, 100);
@@ -142,63 +159,16 @@ public class StatsPlayer : MonoBehaviour
         else
             UIManager.instance.normal.gameObject.SetActive(true);
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.name == "TriggerDePrueba")
-        {
-            Debug.Log("Trigger de prueba DETECTADO. La colisión funciona.");
-        }
-        if (other.CompareTag("Bed"))
-        {
-            estaEnCama = true;
-            Debug.Log("Pipo entró en la cama.");
-        }
-        if (other.CompareTag("Bathtub"))
-        {
-            estaEnBañera = true;
-            Debug.Log("Pipo entró en la bañera.");
-        }
-    }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Bed"))
-        {
-            estaEnCama = false;
-            Debug.Log("Pipo salió de la cama.");
-        }
-        if (other.CompareTag("Bathtub"))
-        {
-            estaEnBañera = false;
-            Debug.Log("Pipo salió de la bañera.");
-        }
-    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("COLISIÓN DETECTADA con " + collision.gameObject.name);
     }
-    public void OnBedEntered()
-    {
-        estaEnCama = true;
-    }
 
-    public void OnBedExited()
-    {
-        estaEnCama = false;
-    }
-    public void OnBañeraEntered()
-    {
-        estaEnBañera = true;
-    }
-
-    public void OnBañeraExited()
-    {
-        estaEnBañera = false;
-    }
     void EarnExp()
     {
         tiempoExp += Time.deltaTime;
-        if (tiempoExp >= 10f)
+        if (tiempoExp >= 25f)
         {
             tiempoExp = 0f;
             exp += 2f;
@@ -207,8 +177,12 @@ public class StatsPlayer : MonoBehaviour
                 exp -= 10f;
                 nivel++;
                 RefreshUI();
-
             }
         }
+    }
+
+    private void HandleFruitCollected(float cantidadHambre)
+    {
+        Comer(cantidadHambre);
     }
 }

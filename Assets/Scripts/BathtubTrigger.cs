@@ -6,11 +6,7 @@ public class BathtubTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (StatsPlayer.instance != null)
-            {
-                StatsPlayer.instance.OnBañeraEntered();
-                
-            }
+            StatsPlayer.InvokeOnBañeraEnteredEvent();
         }
     }
 
@@ -18,11 +14,7 @@ public class BathtubTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (StatsPlayer.instance != null)
-            {
-                StatsPlayer.instance.OnBañeraExited();
-                
-            }
+            StatsPlayer.InvokeOnBañeraExitedEvent();
         }
     }
 }

@@ -56,4 +56,10 @@ public class PauseMenu : MonoBehaviour
     {
         ResumeGame();
     }
+
+    StatsPlayer statsPlayer = new StatsPlayer();
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(statsPlayer);
+    }
 }

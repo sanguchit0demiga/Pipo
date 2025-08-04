@@ -1,16 +1,20 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerData : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int level;
+    public float hambre;
+    public float energia;
+    public float limpieza;
+    public float felicidad;
 
-    // Update is called once per frame
-    void Update()
+    public PlayerData(StatsPlayer player)
     {
-        
+        hambre = player.hambre;
+        energia = player.energia;
+        limpieza = player.limpieza;
+        felicidad= player.felicidad;
     }
 }

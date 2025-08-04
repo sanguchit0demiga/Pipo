@@ -4,18 +4,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour
 {
+    public GameObject config;
+    public GameObject land;
     public GameObject story;
     public static bool storyOpen =false;
     private void Start()
     {
+        config.SetActive(false);
+        land.SetActive(true);
+        story.SetActive(false);
        Cursor.visible = true;
     }
-    void Play()
+    public void Play()
     {
         SceneManager.LoadScene("Patio");
     }
 
-    void Story()
+    public void Story()
     {
         ReadStory();
     }
@@ -23,11 +28,14 @@ public class MainMenuButtons : MonoBehaviour
     void ReadStory()
     {
         storyOpen = true;
+        land.SetActive(false);
         story.SetActive(true);
     }
 
-    void CloseStory()
+    public void CloseWindow()
     {
+        land.SetActive(true);
+        config.SetActive(false);
         story.SetActive(false);
         storyOpen=false;
     }
@@ -35,5 +43,12 @@ public class MainMenuButtons : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Configuration()
+    {
+        storyOpen = true;
+        land.SetActive(false);
+        config.SetActive(true);
     }
 }

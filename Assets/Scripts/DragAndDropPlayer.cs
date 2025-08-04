@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DragAndDropPlayer : MonoBehaviour
@@ -27,7 +27,7 @@ public class DragAndDropPlayer : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No se encontr� SpawnPoint en la escena " + scene.name);
+            Debug.LogWarning("No se encontró SpawnPoint en la escena " + scene.name);
         }
     }
 

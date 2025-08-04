@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 292a9c14fd639eb4ab8f96bbb08d2fe3
+guid: 17a5b55101a453842ab1b4803709963f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6085524761092439429
-    second: dialog box_0
+      213: 4810488660336404380
+    second: pelota_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialog box_0
+      name: pelota_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 8
-        width: 32
-        height: 30
+        x: 3
+        y: 3
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58d32c81780247450800000000000000
-      internalID: 6085524761092439429
+      spriteID: c97656313f942c240800000000000000
+      internalID: 4810488660336404380
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialog box_0: 6085524761092439429
+      pelota_0: 4810488660336404380
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

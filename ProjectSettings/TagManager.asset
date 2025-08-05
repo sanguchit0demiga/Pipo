@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bed
   - Bathtub
+  - Wall
   layers:
   - Default
   - TransparentFX

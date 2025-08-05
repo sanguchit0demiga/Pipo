@@ -6,34 +6,57 @@ public class JabonDragEspuma : MonoBehaviour
     public float intervalo = 0.5f;
     public float cantidadLimpieza = 3f;
 
+    public AudioClip sonidoBañandose; 
+    private AudioSource audioSource;
+
     private bool arrastrando = false;
     private bool tocandoPersonaje = false;
     private float temporizador = 0f;
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.clip = sonidoBañandose;
+        audioSource.loop = true; 
+        audioSource.playOnAwake = false;
+    }
+
     void Update()
     {
-        // Arrastre
+    
         if (arrastrando)
         {
             Vector2 posMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = posMouse;
         }
 
-        if (tocandoPersonaje)
+        bool debeSonar = tocandoPersonaje && arrastrando && StatsPlayer.instance != null && StatsPlayer.instance.EstaEnBañera;
+
+        if (debeSonar)
         {
+            if (!audioSource.isPlaying)
+                audioSource.Play();
+
             temporizador += Time.deltaTime;
             if (temporizador >= intervalo)
             {
-                if (StatsPlayer.instance != null && StatsPlayer.instance.EstaEnBañera)
-                {
-                    if (espumaPrefab != null)
-                        Instantiate(espumaPrefab, transform.position, Quaternion.identity);
+                if (espumaPrefab != null)
+                    Instantiate(espumaPrefab, transform.position, Quaternion.identity);
 
-                    StatsPlayer.instance.Bañar(cantidadLimpieza);
-                }
-
+                StatsPlayer.instance.Bañar(cantidadLimpieza);
                 temporizador = 0f;
             }
+        }
+        else
+        {
+            if (audioSource.isPlaying)
+                audioSource.Stop();
+
+            temporizador = 0f; 
         }
     }
 

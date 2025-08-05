@@ -15,8 +15,8 @@ public class StatsPlayer : MonoBehaviour
     private bool estaEnCama = false;
     private bool estaEnBañera = false;
     public bool EstaEnBañera => estaEnBañera;
-    public float exp = 0f;
-    public int nivel = 1;
+    private float exp = 0f;
+    private int nivel = 1;
     private float tiempoExp = 0f;
 
     private static event Action OnBedEnteredEvent;
@@ -29,8 +29,11 @@ public class StatsPlayer : MonoBehaviour
     public static void InvokeOnBañeraEnteredEvent() => OnBañeraEnteredEvent?.Invoke();
     public static void InvokeOnBañeraExitedEvent() => OnBañeraExitedEvent?.Invoke();
 
+    public AudioClip levelUpSound;
+    
     void Awake()
     {
+       
         if (instance == null)
         {
             instance = this;
@@ -176,6 +179,10 @@ public class StatsPlayer : MonoBehaviour
             {
                 exp -= 10f;
                 nivel++;
+                if (levelUpSound != null)
+                {
+                    AudioManager.instance?.PlaySound(levelUpSound);
+                }
                 RefreshUI();
             }
         }

@@ -11,13 +11,20 @@ public class BallJoint : MonoBehaviour
 
     private float tiempoEnMovimiento = 0f;
     private Rigidbody2D rb;
-
+    public AudioClip sonidoRebote; 
+    private AudioSource audioSource;
     void Start()
     {
         jointt = GetComponent<TargetJoint2D>();
         cam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        
     }
+
 
     void OnMouseDown()
     {
@@ -60,6 +67,14 @@ public class BallJoint : MonoBehaviour
         else
         {
             tiempoEnMovimiento = 0f; 
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Wall"))
+        {
+            if (sonidoRebote != null && audioSource != null)
+                audioSource.PlayOneShot(sonidoRebote);
         }
     }
 }

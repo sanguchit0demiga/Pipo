@@ -9,10 +9,21 @@ public abstract class Fruit : MonoBehaviour, ICollectible
 
     public static event Action<float> OnFruitCollected;
     private float tiempoVida = 10f;
-
-
+    public AudioClip spawnSound;
+    public AudioClip eatSound;
+    void Start()
+    {
+        if (spawnSound != null)
+        {
+            AudioSource.PlayClipAtPoint(spawnSound, transform.position);
+        }
+    }
     public virtual void Collect()
     {
+        if (eatSound != null)
+        {
+            AudioSource.PlayClipAtPoint(eatSound, transform.position);
+        }
         OnFruitCollected?.Invoke(cantidadHambre);
         Destroy(gameObject);
     }

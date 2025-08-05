@@ -15,8 +15,8 @@ public class StatsPlayer : MonoBehaviour
     private bool estaEnCama = false;
     private bool estaEnBañera = false;
     public bool EstaEnBañera => estaEnBañera;
-    private float exp = 0f;
-    private int nivel = 1;
+    public float exp = 0f;
+    public int nivel = 1;
     private float tiempoExp = 0f;
 
     private static event Action OnBedEnteredEvent;

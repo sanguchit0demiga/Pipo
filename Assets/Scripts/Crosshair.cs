@@ -10,8 +10,8 @@ public class CrosshairFollow : MonoBehaviour
     private void Awake()
     {
         crosshairRect = GetComponent<RectTransform>();
-        Cursor.visible = false; 
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void Update()

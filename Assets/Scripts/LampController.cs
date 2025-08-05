@@ -7,6 +7,9 @@ public class LampController : MonoBehaviour
 
     private Animator playerAnimator;
 
+    public AudioSource audioSource;
+    public AudioClip soundOn;
+    public AudioClip soundOff;
     void Start()
     {
        
@@ -33,5 +36,12 @@ public class LampController : MonoBehaviour
             playerAnimator.enabled = lampIsOn; 
 
         Debug.Log("Lámpara encendida: " + lampIsOn);
+        if (audioSource != null)
+        {
+            if (lampIsOn && soundOn != null)
+                audioSource.PlayOneShot(soundOn);
+            else if (!lampIsOn && soundOff != null)
+                audioSource.PlayOneShot(soundOff);
+        }
     }
 }

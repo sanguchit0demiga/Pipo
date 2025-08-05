@@ -29,8 +29,11 @@ public class StatsPlayer : MonoBehaviour
     public static void InvokeOnBañeraEnteredEvent() => OnBañeraEnteredEvent?.Invoke();
     public static void InvokeOnBañeraExitedEvent() => OnBañeraExitedEvent?.Invoke();
 
+    public AudioClip levelUpSound;
+    
     void Awake()
     {
+       
         if (instance == null)
         {
             instance = this;
@@ -176,6 +179,10 @@ public class StatsPlayer : MonoBehaviour
             {
                 exp -= 10f;
                 nivel++;
+                if (levelUpSound != null)
+                {
+                    AudioManager.instance?.PlaySound(levelUpSound);
+                }
                 RefreshUI();
             }
         }

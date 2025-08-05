@@ -714,6 +714,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3078983326498729344, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3996257855226121501, guid: d7dd166676d548442bfba1113208a7be, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -794,6 +798,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4749346558816093337, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749346558816093337, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749346558816093337, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472577010697267723, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114330873638879414, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114330873638879414, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6513307485188274455, guid: d7dd166676d548442bfba1113208a7be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -805,8 +833,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3078983326498729344, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 300797234}
+    - targetCorrespondingSourceObject: {fileID: 9094531230939964228, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1786329130}
+    - targetCorrespondingSourceObject: {fileID: 7879107158070197766, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1741503707}
+    - targetCorrespondingSourceObject: {fileID: 4989125734675794709, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 904552734}
   m_SourcePrefab: {fileID: 100100000, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+--- !u!1 &300797232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3078983326498729344, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+  m_PrefabInstance: {fileID: 258737064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &300797234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300797232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1110ad0ee03639348bb455df67d51403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 6a382a4ebcee2b54c933927295f52ba2, type: 3}
+  clickSound: {fileID: 8300000, guid: 30cf595a6e5ad7740aaa7bbafd5a3d0e, type: 3}
 --- !u!1 &367660278
 GameObject:
   m_ObjectHideFlags: 0
@@ -5563,6 +5622,25 @@ RectTransform:
   m_AnchoredPosition: {x: 99, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &904552732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4989125734675794709, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+  m_PrefabInstance: {fileID: 258737064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &904552734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904552732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1110ad0ee03639348bb455df67d51403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 6a382a4ebcee2b54c933927295f52ba2, type: 3}
+  clickSound: {fileID: 8300000, guid: 30cf595a6e5ad7740aaa7bbafd5a3d0e, type: 3}
 --- !u!1 &914611067
 GameObject:
   m_ObjectHideFlags: 0
@@ -7981,6 +8059,44 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c9fd68b2490cf4f9058fae3b6614cf, type: 3}
+--- !u!1 &1741503705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7879107158070197766, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+  m_PrefabInstance: {fileID: 258737064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1741503707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741503705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1110ad0ee03639348bb455df67d51403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 6a382a4ebcee2b54c933927295f52ba2, type: 3}
+  clickSound: {fileID: 8300000, guid: 30cf595a6e5ad7740aaa7bbafd5a3d0e, type: 3}
+--- !u!1 &1786329125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9094531230939964228, guid: d7dd166676d548442bfba1113208a7be, type: 3}
+  m_PrefabInstance: {fileID: 258737064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1786329130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786329125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1110ad0ee03639348bb455df67d51403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 6a382a4ebcee2b54c933927295f52ba2, type: 3}
+  clickSound: {fileID: 8300000, guid: 30cf595a6e5ad7740aaa7bbafd5a3d0e, type: 3}
 --- !u!224 &1824805973 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3996257855226121501, guid: d7dd166676d548442bfba1113208a7be, type: 3}
@@ -9147,6 +9263,7 @@ MonoBehaviour:
   energia: 100
   felicidad: 100
   limpieza: 100
+  levelUpSound: {fileID: 8300000, guid: ce4b6a52801410c458df4ea9ccfc2416, type: 3}
 --- !u!1 &2130774875
 GameObject:
   m_ObjectHideFlags: 0

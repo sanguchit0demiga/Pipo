@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cantidadHambre: 10
+  spawnSound: {fileID: 8300000, guid: e24b4e9760806c749ba544b2b88b1579, type: 3}
+  eatSound: {fileID: 8300000, guid: f01f80eb0038b5a4980404b3f5d9e842, type: 3}
 --- !u!58 &1215198302988916522
 CircleCollider2D:
   m_ObjectHideFlags: 0

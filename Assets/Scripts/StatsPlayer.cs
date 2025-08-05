@@ -99,7 +99,7 @@ public class StatsPlayer : MonoBehaviour
 
         if (estaEnCama && !LampController.lampIsOn)
         {
-            energia = Mathf.Min(energia + Time.deltaTime * 0.5f, 100f);
+            energia = Mathf.Min(energia + Time.deltaTime * 0.8f, 100f);
         }
         else
         {

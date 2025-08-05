@@ -33,7 +33,7 @@ RectTransform:
   m_Father: {fileID: 3007434319069768439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.86909866, y: 0.0000076293945}
   m_SizeDelta: {x: 1.7381, y: 0}
   m_Pivot: {x: 0.49999982, y: 0.5}
@@ -378,13 +378,14 @@ GameObject:
   - component: {fileID: 6994374488031623022}
   - component: {fileID: 1889743125658511331}
   - component: {fileID: 2373670817688513791}
+  - component: {fileID: 2673380567211858346}
   m_Layer: 5
   m_Name: PauseCanva
-  m_TagString: Untagged
+  m_TagString: PauseMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3996257855226121501
 RectTransform:
   m_ObjectHideFlags: 0
@@ -468,6 +469,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2673380567211858346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2376851886016015859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8302e253cb36c5944b3c37f47acc179d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 2376851886016015859}
 --- !u!1 &2497349319261600324
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,8 +651,8 @@ RectTransform:
   - {fileID: 4419617487198823779}
   m_Father: {fileID: 7144129415535546837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.50000036, y: 0.50000006}
@@ -692,6 +706,7 @@ GameObject:
   - component: {fileID: 200510186399126919}
   - component: {fileID: 1754654994616500679}
   - component: {fileID: 658798613047476119}
+  - component: {fileID: 8562147216644533454}
   m_Layer: 5
   m_Name: buttonX
   m_TagString: Untagged
@@ -812,6 +827,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8562147216644533454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3078983326498729344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1110ad0ee03639348bb455df67d51403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 6a382a4ebcee2b54c933927295f52ba2, type: 3}
+  clickSound: {fileID: 8300000, guid: 30cf595a6e5ad7740aaa7bbafd5a3d0e, type: 3}
 --- !u!1 &4989125734675794709
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +853,7 @@ GameObject:
   - component: {fileID: 3643032488986220312}
   - component: {fileID: 7518668868774350143}
   - component: {fileID: 7235504201939412222}
+  - component: {fileID: 2584203466746042023}
   m_Layer: 5
   m_Name: buttonsave
   m_TagString: Untagged
@@ -933,7 +963,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2376851886016015859}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -945,6 +975,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2584203466746042023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989125734675794709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1110ad0ee03639348bb455df67d51403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 6a382a4ebcee2b54c933927295f52ba2, type: 3}
+  clickSound: {fileID: 8300000, guid: 30cf595a6e5ad7740aaa7bbafd5a3d0e, type: 3}
 --- !u!1 &5472577010697267723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1203,7 @@ GameObject:
   - component: {fileID: 5903447753844880513}
   - component: {fileID: 6764935206394067460}
   - component: {fileID: 6513307485188274455}
+  - component: {fileID: 1885352289362761340}
   m_Layer: 5
   m_Name: buttonMM
   m_TagString: Untagged
@@ -1267,7 +1312,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2673380567211858346}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
@@ -1279,6 +1324,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1885352289362761340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879107158070197766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1110ad0ee03639348bb455df67d51403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 6a382a4ebcee2b54c933927295f52ba2, type: 3}
+  clickSound: {fileID: 8300000, guid: 30cf595a6e5ad7740aaa7bbafd5a3d0e, type: 3}
 --- !u!1 &7961506803558512399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1461,7 @@ GameObject:
   - component: {fileID: 2275521027021788068}
   - component: {fileID: 8616356585134684633}
   - component: {fileID: 1627915094669289634}
+  - component: {fileID: 721794194880131031}
   m_Layer: 5
   m_Name: buttonResume
   m_TagString: Untagged
@@ -1511,7 +1571,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2673380567211858346}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -1523,3 +1583,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &721794194880131031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9094531230939964228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1110ad0ee03639348bb455df67d51403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 6a382a4ebcee2b54c933927295f52ba2, type: 3}
+  clickSound: {fileID: 8300000, guid: 30cf595a6e5ad7740aaa7bbafd5a3d0e, type: 3}

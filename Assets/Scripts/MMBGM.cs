@@ -2,17 +2,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
-public class BGMManager : MonoBehaviour
+public class MMBGM : MonoBehaviour
 {
-    public static BGMManager instance;
+    public static MMBGM instance;
 
     private AudioSource audioSource;
 
-    private readonly int[] escenasConMusica = { 1, 2, 3, 4 };
-
     void Awake()
     {
-
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -39,13 +36,13 @@ public class BGMManager : MonoBehaviour
 
         if (sceneIndex == 0)
         {
-            if (audioSource.isPlaying)
-                audioSource.Stop();
-        }
-        else if (System.Array.Exists(escenasConMusica, id => id == sceneIndex))
-        {
             if (!audioSource.isPlaying)
                 audioSource.Play();
+        }
+        else
+        {
+            if (audioSource.isPlaying)
+                audioSource.Stop();
         }
     }
 }

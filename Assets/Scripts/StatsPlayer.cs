@@ -91,8 +91,8 @@ public class StatsPlayer : MonoBehaviour
 
     void Update()
     {
-        hambre = Mathf.Max(hambre - Time.deltaTime * 0.5f, 0);
-        limpieza = Mathf.Max(limpieza - Time.deltaTime * 0.6f, 0);
+        hambre = Mathf.Max(hambre - Time.deltaTime * 0.3f, 0);
+        limpieza = Mathf.Max(limpieza - Time.deltaTime * 0.5f, 0);
 
         float factor = limpieza < 10 ? 2f : 1f;
         felicidad = Mathf.Max(felicidad - Time.deltaTime * 0.4f, 0);
@@ -103,7 +103,7 @@ public class StatsPlayer : MonoBehaviour
         }
         else
         {
-            energia = Mathf.Max(energia - Time.deltaTime * 0.5f, 0);
+            energia = Mathf.Max(energia - Time.deltaTime * 0.8f, 0);
         }
         EarnExp();
         RefreshUI();

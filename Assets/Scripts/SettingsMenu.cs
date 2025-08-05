@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    
 
     public TMPro.TMP_Dropdown resolutionDropdown;
 
